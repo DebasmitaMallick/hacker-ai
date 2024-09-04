@@ -1,17 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import HackathonCard from "../components/HackathonCard";
+import Hackathons from "../components/Hackathons/index";
+import Filters from "../components/Hackathons/components/Filters";
 
 const ExploreChallenges = () => {
-  const hackathons = useSelector((state) => state.hackathons.hackathons);
-  console.log("hackathons", hackathons);
+  
   return (
-    <div className="bg-[#003145]">
-      <h1 className="text-2xl font-semibold text-white text-center">Explore Challenges</h1>
-      {
-        // hackathons.map(hackathon => <HackathonCard key={hackathon.id} data={hackathon} />)
-        <HackathonCard />
-      }
+    <div className="bg-[#003145] px-12">
+      <h1 className="text-2xl font-semibold text-white text-center">
+        Explore Challenges
+      </h1>
+      <Filters />
+      <Hackathons />
     </div>
   );
 };

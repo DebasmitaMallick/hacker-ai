@@ -1,4 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import Button from "../../../../Button";
+
+function formatDateTime(dateTimeStr) {
+  // Create a Date object from the input string
+  const date = new Date(dateTimeStr);
+
+  // Define options for formatting
+  const options = {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+  };
+
+  // Format the date to a human-readable string
+  const formattedDate = date.toLocaleString('en-GB', options);
+
+  // Modify the formatted string to include 'th' for the day
+  const day = date.getDate();
+  const suffix = day === 1 || day === 21 || day === 31 ? 'st' :
+                 day === 2 || day === 22 ? 'nd' :
+                 day === 3 || day === 23 ? 'rd' : 'th';
+  
+  const formattedWithSuffix = formattedDate.replace(/(\d{2})/, `$1${suffix}`);
+  
+  return formattedWithSuffix;
+}
 
 const Timer = ({ status, startDateTime, endDateTime }) => {
     // 2024-09-11T08:23
@@ -10,7 +39,7 @@ const Timer = ({ status, startDateTime, endDateTime }) => {
         targetDateTime = endDateTime
     }
 
-    const calculateTimeLeft = () => {
+    const calculateTimeLeft = useCallback(() => {
         const now = new Date();
         const difference = new Date(targetDateTime) - now;
     
@@ -25,7 +54,7 @@ const Timer = ({ status, startDateTime, endDateTime }) => {
         }
     
         return timeLeft;
-      };
+      }, [targetDateTime]);
     
       const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
     
@@ -35,10 +64,10 @@ const Timer = ({ status, startDateTime, endDateTime }) => {
         }, 1000);
     
         return () => clearInterval(timer);
-      }, [targetDateTime]);
+      }, [calculateTimeLeft]);
     
   return (
-    <div>
+    <div className="text-center">
       <p className="text-slate-700 font-semibold text-center">
         {status === "Upcoming"
           ? "Starts in"
@@ -49,23 +78,24 @@ const Timer = ({ status, startDateTime, endDateTime }) => {
       {timeLeft.days !== undefined ? (
         <div className="text-center flex gap-x-1 justify-center">
           <div className="mb-2 flex flex-col">
-            <div className="font-bold text-lg">{timeLeft.days}</div>
+            <div className="font-bold text-lg text-slate-700">{timeLeft.days}</div>
             <div className="text-xs">Days</div>
           </div>
           <div>:</div>
           <div className="mb-2">
-            <div className="font-bold text-lg">{timeLeft.hours}</div>
+            <div className="font-bold text-lg text-slate-700">{timeLeft.hours}</div>
             <div className="text-xs">Hours</div>
           </div>
           <div>:</div>
           <div className="mb-2">
-            <div className="font-bold text-lg">{timeLeft.minutes}</div>
+            <div className="font-bold text-lg text-slate-700">{timeLeft.minutes}</div>
             <div className="text-xs">Mins</div>
           </div>
         </div>
       ) : (
-        <div className="text-center text-xl text-red-500">Time's up!</div>
+        <div className="text-center font-bold text-lg mb-6 text-slate-700">{formatDateTime(endDateTime)}</div>
       )}
+      <Button classes="bg-green-700 text-white my-4">Participate Now</Button>
     </div>
   );
 };
