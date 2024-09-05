@@ -2,10 +2,11 @@ import React from "react";
 import SearchBar from "./components/SearchBar";
 import FilterBtn from "./components/FilterBtn";
 import AppliedFilters from "./components/AppliedFilters";
+import SortByBtn from "../SortByBtn";
 
 const Filters = () => {
   return (
-    <div className="h-72 bg-darkBlue">
+    <div className="h-72 bg-darkBlue py-20">
       <h1 className="text-2xl font-semibold text-white text-center">
         Explore Challenges
       </h1>
@@ -15,6 +16,7 @@ const Filters = () => {
           <FilterBtn />
         </div>
         <AppliedFilters />
+        <SortByBtn />
       </div>
     </div>
   );

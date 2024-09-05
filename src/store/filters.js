@@ -4,6 +4,7 @@ const initialState = {
   searchString: "",
   selectedStatuses: [],
   selectedLevels: [],
+  sortOrder: ""
 };
 
 const filterSlice = createSlice({
@@ -38,6 +39,9 @@ const filterSlice = createSlice({
     },
     removeLevel(state, action) {
         state.selectedLevels = state.selectedLevels.filter(level => level !== action.payload)
+    },
+    sortOrderSet(state, action) {
+        state.sortOrder = action.payload
     }
   },
 });
