@@ -21,7 +21,7 @@ const LandingUI = () => {
             </p>
             <Button
               classes="text-blue bg-white hover:bg-slate-300 text-lg ml-10"
-              onClick={() => navigate("createChallenge")}
+              onClick={() => navigate("challengeForm")}
             >
               Create Challenge
             </Button>

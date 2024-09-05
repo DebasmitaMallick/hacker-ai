@@ -64,7 +64,7 @@ const hackathonSlice = createSlice({
   name: "hackathons",
   initialState,
   reducers: {
-    addItem(state, action) {
+    addHackathon(state, action) {
       state.hackathons = [
         {
           ...action.payload,
@@ -75,7 +75,7 @@ const hackathonSlice = createSlice({
     editItem(state, action) {
       state.hackathons = state.hackathons.map(hackathon => hackathon.id === action.payload.id ? action.payload : hackathon)
     },
-    deleteItem(state, action) {
+    deleteHackathon(state, action) {
       state.hackathons = state.hackathons.filter(hackathon => hackathon.id !== action.payload)
     }
   },

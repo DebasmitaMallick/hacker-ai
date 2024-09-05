@@ -6,7 +6,7 @@ const ChallengeDetails = ({ details }) => {
   return (
     <div>
         <Information details={details} />
-        <ChallengeOverview />
+        <ChallengeOverview hackathon={details} />
         <div></div>
     </div>
   )
