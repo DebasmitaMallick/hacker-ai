@@ -82,9 +82,6 @@ const ChallengeDetailsForm = ({ onFormSubmit, hackathonData }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const formData = new FormData(event.target);
-    // const data = Object.fromEntries(formData.entries());
-    // data.image = imageData;
     onFormSubmit({ ...formData, image: imageData });
   };
   return (

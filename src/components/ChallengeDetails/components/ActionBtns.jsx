@@ -3,6 +3,7 @@ import Button from "../../Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { hackathonActions } from "../../../store/hackathons";
+import { toast } from "react-toastify";
 
 const ActionBtns = ({ hackathon }) => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const ActionBtns = ({ hackathon }) => {
   const handleDelete = () => {
     if(window.confirm("Are you sure?") === true) {
       dispatch(hackathonActions.deleteHackathon(hackathon.id));
+      toast.info("Deleted successfully!")
       navigate("/");
     }
   };

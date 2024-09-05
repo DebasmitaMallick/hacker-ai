@@ -3,6 +3,7 @@ import ChallengeDetailsForm from "../components/ChallengeDetailsForm";
 import { hackathonActions } from "../store/hackathons";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const ChallengeForm = () => {
   const { state } = useLocation();
@@ -36,6 +37,7 @@ const ChallengeForm = () => {
       ...formData,
     };
     dispatch(hackathonActions.addHackathon(challengeData));
+    toast.success("Saved successfully!")
     navigate("/");
   };
   return (
