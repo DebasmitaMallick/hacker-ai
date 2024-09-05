@@ -19,16 +19,24 @@ const Information = ({ details }) => {
   targetTime = formatDateTime(targetTime);
 
   return (
-    <div className="bg-darkBlue">
-      <p className="bg-yellow-400 font-semibold text-sm w-fit px-4 py-1 rounded-sm flex gap-2 items-center">
+    <div className="bg-blue py-20 px-12">
+      <p className="bg-yellow-400 font-semibold text-sm w-fit px-4 py-1 rounded-sm flex gap-2 items-center mb-2">
         <AiOutlineClockCircle />
         <div>
-        {timerStatus}
-        {targetTime}
+          {timerStatus}
+          {targetTime}
         </div>
       </p>
-      <h1 className="text-white">{details["challenge-name"]}</h1>
-      <p className="text-white">{details["description"]}</p>
+      <h1 className="text-white text-3xl font-semibold pb-6">
+        {details["challenge-name"]}
+      </h1>
+      <p className="text-white mb-3">{details["description"]}</p>
+      <div
+        id="details-status-card"
+        className="bg-white font-semibold w-24 text-center py-1 rounded-sm"
+      >
+        {details.status}
+      </div>
     </div>
   );
 };

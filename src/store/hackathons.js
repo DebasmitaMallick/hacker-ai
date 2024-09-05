@@ -71,21 +71,13 @@ const hackathonSlice = createSlice({
         },
         ...state.hackathons,
       ];
+    },
+    editItem(state, action) {
+      state.hackathons = state.hackathons.map(hackathon => hackathon.id === action.payload.id ? action.payload : hackathon)
+    },
+    deleteItem(state, action) {
+      state.hackathons = state.hackathons.filter(hackathon => hackathon.id !== action.payload)
     }
-
-    // removeItem(state, action) {
-    //     const existingItemIndex = state.items.findIndex(item => action.payload.title === item.title);
-    //     const existingItem = state.items[existingItemIndex]
-    //     if(existingItem.quantity > 1) {
-
-    //         state.items[existingItemIndex] = {
-    //             ...existingItem,
-    //             quantity: existingItem.quantity - 1
-    //         }
-    //     } else {
-    //         state.items =  state.items.filter(item => item.title !== action.payload.title);
-    //     }
-    // }
   },
 });
 
