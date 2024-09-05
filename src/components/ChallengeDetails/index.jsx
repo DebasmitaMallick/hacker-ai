@@ -1,13 +1,14 @@
 import React from 'react'
 import Information from './components/Information'
-import ChallengeOverview from './components/Overview'
+import ActionBtns from './components/ActionBtns'
+import Overview from './components/Overview'
 
 const ChallengeDetails = ({ details }) => {
   return (
     <div>
         <Information details={details} />
-        <ChallengeOverview hackathon={details} />
-        <div></div>
+        <ActionBtns hackathon={details} />
+        <Overview />
     </div>
   )
 }

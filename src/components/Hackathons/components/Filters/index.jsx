@@ -6,7 +6,7 @@ import SortByBtn from "../SortByBtn";
 
 const Filters = () => {
   return (
-    <div className="h-72 bg-darkBlue py-20">
+    <div className="h-96 bg-darkBlue py-20 relative">
       <h1 className="text-2xl font-semibold text-white text-center">
         Explore Challenges
       </h1>

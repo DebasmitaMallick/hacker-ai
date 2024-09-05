@@ -9,8 +9,10 @@ const HackathonCard = ({ data }) => {
       to="details"
       state={{ details: data }}
     >
-      <div id="hackathon-card" className="max-w-80 shadow justify-center">
-        <img src={data.image} alt="hackathon-image" />
+      <div id="hackathon-card" className="w-80 shadow justify-center">
+        <div className="h-[158px] max-h-[159px]">
+          <img src={data.image} alt="hackathon-image" className="w-full h-full object-cover rounded-t-2xl" />
+        </div>
         <div className="p-5 bg-white min-h-52 rounded-b-xl">
           <StatusBadge status={data.status} />
           <h2 className="font-bold text-lg text-center pb-5">

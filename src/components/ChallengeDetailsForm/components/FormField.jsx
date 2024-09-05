@@ -8,7 +8,9 @@ const FormField = ({
   onImageUpload,
   imageData,
   val,
+  onChange
 }) => {
+  const inputBoxClasses = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
   return (
     <div className="mb-5">
       <label
@@ -22,8 +24,9 @@ const FormField = ({
           name={fieldId}
           value={val}
           id="description"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className={inputBoxClasses}
           required
+          onChange={onChange}
         />
       ) : fieldType === "file" ? (
         <>
@@ -38,13 +41,6 @@ const FormField = ({
             uploadHandler={onImageUpload}
             customUpload
             uploadLabel="Upload"
-            value={val}
-            itemTemplate={(file) => (
-              <div>
-                <img src={file.url} alt={file.name} />
-                <span>{file.name}</span>
-              </div>
-            )}
           />
           {imageData && (
             <img
@@ -59,7 +55,8 @@ const FormField = ({
           name={fieldId}
           value={val}
           id={fieldId}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          onChange={onChange}
+          className={inputBoxClasses}
         >
           <option>Easy</option>
           <option>Hard</option>
@@ -71,7 +68,8 @@ const FormField = ({
           value={val}
           type={fieldType}
           id={fieldId}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          onChange={onChange}
+          className={inputBoxClasses}
           required
         />
       )}

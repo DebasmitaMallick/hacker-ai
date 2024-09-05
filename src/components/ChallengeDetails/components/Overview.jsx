@@ -1,34 +1,19 @@
 import React from "react";
-import Button from "../../Button";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { hackathonActions } from "../../../store/hackathons";
 
-const ChallengeOverview = ({ hackathon }) => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleDelete = () => {
-    dispatch(hackathonActions.deleteHackathon(hackathon.id));
-    navigate("/");
-  };
-
+const Overview = () => {
   return (
-    <div className="flex justify-between px-10">
-      <button>Overview</button>
-      <div className="flex gap-4">
-        <Link to="/challengeForm" state={{ data: hackathon }}>
-          <Button classes="bg-green-600 text-white">Edit</Button>
-        </Link>
-        <Button
-          classes="border-double border-2 border-red-500"
-          onClick={handleDelete}
-        >
-          Delete
-        </Button>
-      </div>
+    <div className="py-8 px-16 text-slate-500 font-medium">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.
     </div>
   );
 };
 
-export default ChallengeOverview;
+export default Overview;

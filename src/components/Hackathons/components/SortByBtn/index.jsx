@@ -18,7 +18,7 @@ const SortByBtn = () => {
   };
 
   return (
-    <div>
+    <div className="absolute right-0 left-0 bottom-4">
       <button
         id="sort-by-btn"
         className=" bg-white w-24 h-10 rounded-md text-center"
@@ -32,7 +32,7 @@ const SortByBtn = () => {
           <GoSortAsc className="m-auto text-xl" />
         )}
       </button>
-      <p className="text-white">{sortOrder}</p>
+      <p className="text-white">{sortOrder || "By date"}</p>
     </div>
   );
 };

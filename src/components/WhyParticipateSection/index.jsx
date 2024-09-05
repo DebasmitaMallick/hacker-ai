@@ -8,22 +8,22 @@ import ReasonCard from "./components/Card";
 const participationReasons = [
   {
     reason: "Prove your skills",
-    description: "Gain experience",
+    description: "Gain substantial experience by solving real-world problems and pit against others to come up with innovative solutions.",
     icon: img2,
   },
   {
     reason: "Learn from community",
-    description: "Gain experience",
+    description: "One can look and analyze the solutions submitted by the other Data Scientists in the community and learn from them.",
     icon: img4,
   },
   {
     reason: "Challenge yourself",
-    description: "Gain experience",
+    description: "There is nothing for you to lose by participating in a challenge. You can fail safe, learn out of the entire experience and bounce back harder.",
     icon: img3,
   },
   {
     reason: "Earn recognition",
-    description: "Gain experience",
+    description: "You will stand out from the crowd if you do well in Alchallenges, it not only helps you shine in the community but also earns rewards.",
     icon: img1,
   },
 ];
