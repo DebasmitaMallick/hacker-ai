@@ -16,7 +16,7 @@ const initialState = {
       status: "Upcoming",
     },
     {
-      id: "0.3071462518664867jgiuguig",
+      id: "0.3071462518664867jg8768768",
       "challenge-name": "Java Bootcamp",
       "start-date-time": "2024-07-11T08:23",
       "end-date-time": "2024-08-11T08:23",
@@ -26,7 +26,7 @@ const initialState = {
       status: "Past",
     },
     {
-      id: "0.3071462518664867jgiuguig",
+      id: "0.3071462518664867jgiuvjhgjyy",
       "challenge-name": "React Bootcamp",
       "start-date-time": "2024-09-03T08:23",
       "end-date-time": "2024-09-11T08:23",
@@ -36,7 +36,7 @@ const initialState = {
       status: "Active",
     },
     {
-      id: "0.3071462518664867jgiuguig",
+      id: "0.ddddd664867jgiuguig",
       "challenge-name": "Java Bootcamp",
       "start-date-time": "2024-07-11T08:23",
       "end-date-time": "2024-08-11T08:23",
@@ -46,7 +46,7 @@ const initialState = {
       status: "Past",
     },
     {
-      id: "0.3071462518664867jgiuguig",
+      id: "0.aaaaa664867jgiuguig",
       "challenge-name": "React Bootcamp",
       "start-date-time": "2024-09-03T08:23",
       "end-date-time": "2024-09-11T08:23",

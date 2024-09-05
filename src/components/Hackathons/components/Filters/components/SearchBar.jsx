@@ -10,7 +10,7 @@ const SearchBar = () => {
       type="text"
       name="search"
       id="search"
-      className="w-3/4 py-3 px-6 rounded-xl text-xl max-h-[52px]"
+      className="w-full py-3 px-6 rounded-xl text-xl max-h-[52px]"
       placeholder="Search"
       value={searchString}
       onChange={(e) =>

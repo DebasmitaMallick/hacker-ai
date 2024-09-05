@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import CreateChallenge from './pages/CreateChallenge';
-import ExploreChallenges from './pages/ExploreChallenges';
 import HomePage from "./pages/Home";
 import RootLayout from './pages/Root';
+import HackathonDetail from './pages/HackathonDetail';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: 'createChallenge',
         element: <CreateChallenge />
+      },
+      {
+        path: 'details',
+        element: <HackathonDetail />
       }
     ]
   }

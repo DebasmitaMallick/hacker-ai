@@ -24,7 +24,7 @@ const Hackathons = () => {
   }
 
   return (
-    <div className="grid grid-cols-3 text-center gap-10 justify-items-center">
+    <div className="grid grid-cols-3 text-center gap-10 justify-items-center px-12 py-20">
         {transformHackathons().map((hackathon) => (
           <HackathonCard key={hackathon.id} data={hackathon} />
         ))}

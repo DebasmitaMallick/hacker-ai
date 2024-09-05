@@ -67,45 +67,49 @@ const FilterBtn = () => {
   ];
 
   return (
-    <div className="bg-white w-64 px-3 py-6 rounded-xl">
-      <div className="flex justify-between">
-        <div>Filter</div>
-        <button onClick={() => setShowFilters((prev) => !prev)}>
-          {showFilters ? <IoChevronUpOutline /> : <IoChevronDownSharp />}
-        </button>
+    <div className={`relative ${showFilters ? "w-64" : "w-24"}`}>
+      <div
+        className={`bg-white px-3 py-[14px] rounded-xl absolute top-0 right-0 w-full`}
+      >
+        <div className="flex justify-between">
+          <div>Filter</div>
+          <button onClick={() => setShowFilters((prev) => !prev)}>
+            {showFilters ? <IoChevronUpOutline /> : <IoChevronDownSharp />}
+          </button>
+        </div>
+        {showFilters && (
+          <>
+            <hr className="my-2" />
+            {filters.map((filter) => (
+              <Fragment key={filter.name}>
+                <div className="text-left">
+                  <p>{filter.name}</p>
+                  <ul>
+                    {filter.options.map((opt) => {
+                      const name = opt.toLowerCase();
+                      return (
+                        <li key={opt}>
+                          <input
+                            type="checkbox"
+                            name={name}
+                            value={opt}
+                            id={name}
+                            className="mr-2"
+                            onChange={filter.actionHandler}
+                            checked={isChecked(filter.name, opt)}
+                          />
+                          <label htmlFor={name}>{opt}</label>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+                {filter.name === "Status" && <hr className="my-2" />}
+              </Fragment>
+            ))}
+          </>
+        )}
       </div>
-      {showFilters && (
-        <>
-          <hr className="my-2" />
-          {filters.map((filter) => (
-            <Fragment key={filter.name}>
-              <div className="text-left">
-                <p>{filter.name}</p>
-                <ul>
-                  {filter.options.map((opt) => {
-                    const name = opt.toLowerCase();
-                    return (
-                      <li key={opt}>
-                        <input
-                          type="checkbox"
-                          name={name}
-                          value={opt}
-                          id={name}
-                          className="mr-2"
-                          onChange={filter.actionHandler}
-                          checked={isChecked(filter.name, opt)}
-                        />
-                        <label htmlFor={name}>{opt}</label>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              {filter.name === "Status" && <hr className="my-2" />}
-            </Fragment>
-          ))}
-        </>
-      )}
     </div>
   );
 };
